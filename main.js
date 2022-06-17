@@ -16,6 +16,6 @@ function preload(){
 
 function keyPressed(){ 
     if (keyCode === 32){
-        game.squirrel.jump();
+      game.squirrel.jump();
     }
   };

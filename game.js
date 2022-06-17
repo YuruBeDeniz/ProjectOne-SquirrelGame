@@ -5,6 +5,8 @@ class Game {
         this.treasureNuts = [];
         this.background.backgroundImages = [];
         this.treasureNutImage;
+        this.counter = 0;
+        this.timer = 0;
     }
 
     preload(){
@@ -46,9 +48,20 @@ class Game {
 			if (nut.checkCollision(this.squirrel) || nut.x < 0) {
 				return false
 			} else {
-				return true
+                
+				return true;  
+                
 			}
 		})         
+    
+    textFont('Courier New', 40);
+    text(`Score: ${this.counter}`, 800, 40)
+    textStyle(BOLD)
+    if(frameCount % 60 === 0){
+        this.timer++
+        console.log(this.timer)
+    }
+    text(`Timer: ${this.timer}`, 800, 90)
     }
 }
 
@@ -90,6 +103,7 @@ class TreasureNut {
       }
     //we put image as a parameter here, because we defined it in js:4 as
     //an empty array.
+    //parameter is image so that we can put different images if we want
 
     draw(){
         this.x -=3;
@@ -106,11 +120,13 @@ class TreasureNut {
 		const squirrelX = (squirrelsCoordinate.x + squirrelsCoordinate.width) / 2
 		const squirrelY = (squirrelsCoordinate.y + squirrelsCoordinate.height) / 2
 
-		if (dist(obstacleX, obstacleY, squirrelX, squirrelY) > 25) {
+		if (dist(obstacleX, obstacleY, squirrelX, squirrelY) > 20) {
 			return false
 		} else {
 			// we have a colission
 			// console.log('colission')
+            game.counter++
+            //console.log(game.counter)
 			return true
 		}
     }
