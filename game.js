@@ -30,7 +30,7 @@ class Game {
 			// every 110th frame count, a new nut appears
             //so, it determines the frequency of the apperance of the nuts
 			this.treasureNuts.push(new TreasureNut(this.treasureNutImage))
-			//console.log(this.treasureNuts)
+			console.log(this.treasureNuts)
 		}
 
 		// iterate over the obstacles array and call the draw function for 
