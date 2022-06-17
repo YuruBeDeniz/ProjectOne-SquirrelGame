@@ -10,13 +10,13 @@ class Game {
     preload(){
         this.background.backgroundStableImage = loadImage('/images/background0.png')
         this.background.backgroundImages = [ 
-            {src: loadImage('/images/background1.png'), x:0, speed: 1},
-            {src: loadImage('/images/background2.png'), x:0, speed: 2}, 
-            {src: loadImage('/images/background3.png'), x:0, speed: 3},
-            {src: loadImage('/images/background4.png'), x:0, speed: 4}
+            {src: loadImage('images/background1.png'), x:0, speed: 1},
+            {src: loadImage('images/background2.png'), x:0, speed: 2}, 
+            {src: loadImage('images/background3.png'), x:0, speed: 3},
+            {src: loadImage('images/background4.png'), x:0, speed: 4}
         ];
-        this.squirrel.image = loadImage('/images/Pngtree—squirrel_7189362.png');
-        this.treasureNutImage = loadImage('/images/Pngtree—acorn.png')
+        this.squirrel.image = loadImage('images/Pngtree—squirrel_7189362.png');
+        this.treasureNutImage = loadImage('images/Pngtree—acorn.png')
     }
 
     draw(){
@@ -25,7 +25,7 @@ class Game {
         this.squirrel.draw();
 
         if (frameCount % 110 === 0) {
-			// every 100th frame count, a new nut appears
+			// every 110th frame count, a new nut appears
             //so, it determines the frequency of the apperance of the nuts
 			this.treasureNuts.push(new TreasureNut(this.treasureNutImage))
 			//console.log(this.treasureNuts)
