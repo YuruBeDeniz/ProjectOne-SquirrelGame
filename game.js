@@ -8,7 +8,7 @@ class Game {
     }
 
     preload(){
-        this.background.backgroundStableImage = loadImage('/images/background0.png')
+        this.background.backgroundStableImage = loadImage('images/background0.png')
         this.background.backgroundImages = [ 
             {src: loadImage('images/background1.png'), x:0, speed: 1},
             {src: loadImage('images/background2.png'), x:0, speed: 2}, 
